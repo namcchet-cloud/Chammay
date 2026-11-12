@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /Chammay/
+Sitemap: https://namcchet-cloud.github.io/Chammay/sitemap.xml
