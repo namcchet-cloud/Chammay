@@ -1,21 +1,23 @@
-# Chạm Mây SEO & Travel Guide v1.0
+# Chạm Mây · Twilight Experience v2.0
 
 ## Cách cài đặt
+1. Giải nén ZIP.
+2. Trong GitHub repo `namcchet-cloud/Chammay`, chọn Add file > Upload files.
+3. Tải toàn bộ tệp và thư mục `assets` trong gói này lên thư mục gốc repo, giữ nguyên cấu trúc.
+4. Ghi đè `index.html` và các tệp cẩm nang cùng tên. Không xóa các asset/CSS/JS cũ đang có trên repo.
+5. Chờ GitHub Pages cập nhật, mở trang và thử trên điện thoại.
+6. Trong Search Console, kiểm tra URL trang chủ và gửi lại `https://namcchet-cloud.github.io/Chammay/sitemap.xml`.
 
-1. Giải nén ZIP. Mở repo `namcchet-cloud/Chammay` trên GitHub.
-2. Vào nhánh đang chạy GitHub Pages, chọn **Add file > Upload files**.
-3. Kéo **7 tệp**: `index.html`, `seo-guide.css`, `robots.txt`, `sitemap.xml`, `du-lich-bao-loc.html`, `dac-san-bao-loc.html`, `kinh-nghiem-bao-loc.html`. **Không tải file hướng dẫn này lên nếu không cần.**
-4. Xác nhận thay thế `index.html`, commit và chờ Pages triển khai.
-5. Giữ nguyên thư mục `assets/`, `styles.css`, `script.js` của website hiện tại. Bản cập nhật chỉ thay trang chủ và bổ sung tệp mới.
-6. Truy cập website, mở các liên kết và kiểm tra hiển thị trên điện thoại.
-7. Vào Google Search Console > Sitemaps, gửi `https://namcchet-cloud.github.io/Chammay/sitemap.xml`.
-8. Dùng Kiểm tra URL cho trang chủ và từng bài viết; theo dõi hiệu quả trong mục Hiệu suất.
+## Có gì mới
+- Ảnh bìa thật do chủ cơ sở cung cấp, gam xanh đêm và ánh vàng.
+- Khu vực chữ bên trái được phủ gradient đậm để che logo DJI có sẵn trên ảnh bìa. Ảnh gốc vẫn lưu nguyên trong assets; không có tệp ảnh xóa logo bằng AI.
+- Giao diện responsive, hoạt ảnh xuất hiện nhẹ, tiến trình cuộn, hỗ trợ giảm chuyển động.
+- Chuyển đổi 4 ngôn ngữ VI / EN / RU / ZH trên trang chủ; ba trang cẩm nang vẫn bằng tiếng Việt.
+- Liên hệ điện thoại, Facebook, Google Maps.
+- SEO meta, dữ liệu doanh nghiệp, ảnh OpenGraph.
 
-## Lưu ý
-
-- Trang chủ được xây dựng lại theo phong cách xanh kem tối giản, **không giữ nguyên bố cục pixel** của bản demo cũ. Các ảnh và CSS/JS gốc vẫn được giữ nguyên trong repo.
-- Nội dung du lịch là tham khảo, chưa xác minh địa chỉ/giá/giờ hoạt động từng điểm.
-- Chưa có dữ liệu giá phòng, địa chỉ đường phố, điện thoại hoặc ảnh phòng thực tế nên không tự thêm.
-- Nếu xác minh được tên pháp lý, địa chỉ và số điện thoại của Chạm Mây, hãy bổ sung vào dữ liệu LodgingBusiness ở `index.html`.
-- Việc có sitemap, metadata, Google Business Profile không đảm bảo xếp hạng top 1 với truy vấn `Chạm Mây`.
-- Trước khi cập nhật, nên lưu bản sao `index.html` hiện tại để có thể quay lại.
+## Chú ý
+- Không tự công bố giá, tiện nghi hoặc dịch vụ chưa được xác nhận.
+- Khi có ảnh bìa đã xóa chữ gốc, thay `assets/cham-may-evening-original.jpg` bằng ảnh đó (giữ tên) để hiển thị đầy đủ.
+- Ảnh gốc có watermark DJI; hiện được che ở vùng đặt chữ trên hero bằng lớp phủ tối, nhưng vẫn thấy trong phần ảnh giới thiệu nhỏ.
+- Bản dịch đầy đủ cho các bài cẩm nang là giai đoạn tiếp theo.
