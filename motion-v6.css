@@ -1,0 +1,32 @@
+/* Chạm Mây v6 | coherent scene-based motion, GPU-friendly */
+:root{--cm-ease:cubic-bezier(.16,1,.3,1);--cm-ink:#092327;--cm-gold:#eac18a}
+html{scroll-behavior:smooth;scroll-padding-top:84px}body{overflow-x:clip}
+button,a,select{-webkit-tap-highlight-color:transparent}a:focus-visible,button:focus-visible,select:focus-visible{outline:2px solid var(--cm-gold);outline-offset:4px}
+.hero{isolation:isolate}.hero-photo{will-change:auto;transform:scale(1.035);transition:transform 12s linear}.cm-ready .hero-photo{transform:scale(1)}
+.hero-copy>*{animation:cm-hero-in 1.15s var(--cm-ease) both}.hero-copy>*:nth-child(2){animation-delay:.12s}.hero-copy>*:nth-child(3){animation-delay:.24s}.hero-copy>*:nth-child(4){animation-delay:.36s}.hero-copy>*:nth-child(5){animation-delay:.48s}
+@keyframes cm-hero-in{from{opacity:0;transform:translate3d(0,28px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
+/* CSS-only gentle atmospheric lighting, intentionally low contrast */
+.hero:after{content:"";position:absolute;inset:0;pointer-events:none;z-index:1;background:radial-gradient(ellipse at 75% 32%,rgba(238,191,120,.13),transparent 48%);animation:cm-light 12s ease-in-out infinite alternate}
+@keyframes cm-light{from{opacity:.35}to{opacity:.85}}
+/* Existing reveal elements remain visible without JavaScript. Motion is progressive enhancement. */
+.cm-motion .reveal:not(.visible){opacity:0;transform:translate3d(0,35px,0);transition:opacity .95s var(--cm-ease),transform .95s var(--cm-ease);transition-delay:var(--reveal-delay,0ms)}
+.cm-motion .reveal[data-reveal=left]:not(.visible){transform:translate3d(-38px,12px,0)}
+.cm-motion .reveal[data-reveal=right]:not(.visible){transform:translate3d(38px,12px,0)}
+.cm-motion .reveal.visible{opacity:1;transform:none;transition:opacity .95s var(--cm-ease),transform .95s var(--cm-ease);transition-delay:var(--reveal-delay,0ms)}
+.journey-card{--tilt-x:0deg;--tilt-y:0deg;transform:perspective(900px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));transition:transform .55s var(--cm-ease),box-shadow .55s var(--cm-ease)}
+.journey-card:hover{box-shadow:0 20px 65px rgba(0,0,0,.22)}
+.journey-card img{transition:transform 1.1s var(--cm-ease)}.journey-card:hover img{transform:scale(1.055)}
+.section-eyebrow,.image-label,.photo-credit{font-size:clamp(13px,1.05vw,16px)!important;letter-spacing:.09em!important;line-height:1.55}
+.story-copy p,.discover-intro p,.feature-content p,.contact-text p{line-height:1.85}
+/* Make alternating chapters distinct without narrowing full-bleed areas */
+.story,.discover,.feature,.contact{position:relative;isolation:isolate}
+.story:before,.discover:before{content:"";position:absolute;width:min(32vw,440px);aspect-ratio:1;right:-12vw;top:8%;border:1px solid rgba(232,192,137,.10);border-radius:50%;pointer-events:none;z-index:-1}
+.discover:before{left:-14vw;right:auto;top:18%}
+.cm-intro{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;background:#071b20;pointer-events:none;opacity:1;transition:opacity .9s ease,visibility .9s ease;overflow:hidden}
+.cm-intro.cm-exit{opacity:0;visibility:hidden}.cm-intro-glow{position:absolute;width:75vmax;height:75vmax;border-radius:50%;background:radial-gradient(circle,rgba(202,164,108,.19),transparent 65%);animation:cm-intro-breathe 2.2s ease-in-out both}
+.cm-intro-wordmark{position:relative;font:500 clamp(36px,7vw,86px)/1.1 'Playfair Display',Georgia,serif;letter-spacing:.06em;text-align:center;color:#f5e9d6;animation:cm-intro-word 1.45s var(--cm-ease) both}
+.cm-intro-wordmark span{display:block;margin-top:22px;font:500 clamp(14px,2vw,20px)/1.6 'Be Vietnam Pro',sans-serif;letter-spacing:.01em;color:#eac18a}
+@keyframes cm-intro-word{from{opacity:0;transform:translateY(24px);filter:blur(5px)}to{opacity:1;transform:none;filter:blur(0)}}
+@keyframes cm-intro-breathe{from{transform:scale(.6);opacity:.2}to{transform:scale(1.1);opacity:1}}
+@media(max-width:700px){.cm-motion .reveal[data-reveal=left]:not(.visible),.cm-motion .reveal[data-reveal=right]:not(.visible){transform:translate3d(0,24px,0)}.hero:after{animation:none}.section-eyebrow{font-size:13px!important}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cm-intro{display:none!important}.hero-photo,.hero-copy>*,.hero:after,.reveal,.journey-card,.journey-card img{animation:none!important;transition:none!important;transform:none!important;opacity:1!important}}
